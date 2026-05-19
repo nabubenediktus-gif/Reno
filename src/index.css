@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;500;700;900&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Orbitron", sans-serif;
+  
+  --color-avenger-red: #C3073F;
+  --color-avenger-blue: #1A2238;
+  --color-avenger-dark: #0B0C10;
+  --color-avenger-gray: #1F2833;
+  --color-avenger-teal: #66FCF1;
+  --color-avenger-silver: #C5C6C7;
+}
+
+:root {
+  --avenger-red: #C3073F;
+  --avenger-blue: #1A2238;
+  --avenger-dark: #0B0C10;
+  --avenger-gray: #1F2833;
+  --avenger-teal: #66FCF1;
+  --avenger-silver: #C5C6C7;
+}
+
+body {
+  background-color: var(--avenger-dark);
+  color: var(--avenger-silver);
+  font-family: var(--font-sans);
+}
+
+.avenger-card {
+  background: linear-gradient(135deg, var(--avenger-gray) 0%, #151b24 100%);
+  border: 1px solid rgba(102, 252, 241, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.avenger-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--avenger-teal), transparent);
+}
+
+.hud-button {
+  background: rgba(102, 252, 241, 0.05);
+  border: 1px solid var(--avenger-teal);
+  color: var(--avenger-teal);
+  transition: all 0.3s ease;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  font-family: var(--font-display);
+}
+
+.hud-button:hover {
+  background: var(--avenger-teal);
+  color: var(--avenger-dark);
+  box-shadow: 0 0 15px var(--avenger-teal);
+}
+
+.tech-grid {
+  background-image: 
+    linear-gradient(rgba(102, 252, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102, 252, 241, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--avenger-teal);
+  opacity: 0.3;
+  box-shadow: 0 0 10px var(--avenger-teal);
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--avenger-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--avenger-gray);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--avenger-teal);
+}

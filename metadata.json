@@ -1,0 +1,6 @@
+{
+  "name": "Avengers Calendar",
+  "description": "A heroic monthly calendar application themed after the Earth's Mightiest Heroes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
